@@ -14,9 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Homebrew Editor',
-      theme: ThemeData(
-        primarySwatch: Colors.amber,
-      ),
+      theme: CustomTheme.defaultTheme,
       home: const PageEditor(),
     );
   }
