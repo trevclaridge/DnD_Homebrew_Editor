@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:homebrew_editor/view/view.dart';
+import 'package:homebrew_editor/model/model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,41 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Homebrew Editor',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.amber,
       ),
-      home: const MyHomePage(title: 'Homebrew Editor'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Placeholder(
-              fallbackHeight: MediaQuery.of(context).size.height / 10.0,
-              fallbackWidth: MediaQuery.of(context).size.width / 10.0,
-            )
-          ],
-        ),
-      ),
+      home: const PageEditor(),
     );
   }
 }
