@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:homebrew_editor/view/view.dart';
 import 'package:homebrew_editor/model/model.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => Data(),
+        )
+      ],
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
