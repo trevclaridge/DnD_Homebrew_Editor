@@ -1,16 +1,12 @@
-# homebrew_editor
+# D&D Homebrew Editor
 
-A new Flutter project.
+A multi-platform application to create well-formated homebrew pdfs for Dungeons and Dragons.
 
-## Getting Started
+## Inspiration
 
-This project is a starting point for a Flutter application.
+This project takes some inspiration from other popular homebrew editors:
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [GM Binder](https://www.gmbinder.com/)
+- [Homebrewery](https://homebrewery.naturalcrit.com/)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.

@@ -34,6 +34,8 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  flutter_quill: ^4.0.10
+  provider: ^6.0.2
 
 dev_dependencies:
   flutter_test:
@@ -73,17 +75,28 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
+  fonts:
+    - family: Bookinsanity
+      fonts:
+        - asset: lib/view/theme/fonts/bookinsanity/Bookinsanity.otf
+        - asset: lib/view/theme/fonts/bookinsanity/Bookinsanity_Italic.otf
+        - asset: lib/view/theme/fonts/bookinsanity/Bookinsanity_Bold.otf
+        - asset: lib/view/theme/fonts/bookinsanity/Bookinsanity_Bold_Italic.otf
+    - family: Mr Eaves Small Caps
+      fonts:
+        - asset: lib/view/theme/fonts/mr_eaves_small_caps/Mr_Eaves_Small_Caps.ttf
+    - family: Scaly Sans
+      fonts:
+        - asset: lib/view/theme/fonts/scaly_sans/Scaly_Sans.otf
+        - asset: lib/view/theme/fonts/scaly_sans/Scaly_Sans_Italic.otf
+        - asset: lib/view/theme/fonts/scaly_sans/Scaly_Sans_Bold.otf
+        - asset: lib/view/theme/fonts/scaly_sans/Scaly_Sans_Bold_Italic.otf
+    - family: Zatanna Misdirection
+      fonts:
+        - asset: lib/view/theme/fonts/zatanna_misdirection/Zatanna_Misdirection.otf
+        - asset: lib/view/theme/fonts/zatanna_misdirection/Zatanna_Misdirection_Italic.otf
+        - asset: lib/view/theme/fonts/zatanna_misdirection/Zatanna_Misdirection_Bold.otf
+        - asset: lib/view/theme/fonts/zatanna_misdirection/Zatanna_Misdirection_Bold_Italic.otf
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
