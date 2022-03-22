@@ -3,68 +3,62 @@ part of view;
 class Page extends StatelessWidget {
   Page({Key? key}) : super(key: key);
 
-  var data = Data();
-
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView(
-        children: [
-          // ListView.builder(
-          //   shrinkWrap: true,
-          //   itemCount: data.paragraphs.length,
-          //   itemBuilder: ((context, index) {
-          //     return Container(
-          //       margin: const EdgeInsets.all(5.0),
-          //       child: TextField(
-          //         style: const TextStyle(
-          //             fontFamily: 'Bookinsanity', fontSize: 9.0),
-          //         maxLines: null,
-          //         decoration: const InputDecoration(border: InputBorder.none),
-          //         controller:
-          //             TextEditingController(text: data.paragraphs[index]),
-          //       ),
-          //     );
-          //   }),
-          // ),
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: data.dataInOrder.length,
-            itemBuilder: ((context, index) {
-              return Container(
-                  margin: EdgeInsets.all(5.0), child: data.dataInOrder[index]);
-            }),
+    return InteractiveViewer(
+      maxScale: 5.0,
+      minScale: 0.5,
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: AspectRatio(
+          aspectRatio: 1 / 1.4142,
+          child: Container(
+            color: Palette.pageColor,
+            child: ListView(
+              children: [
+                Consumer<Data>(
+                  builder: (context, value, child) {
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: Data().dataInOrder.length,
+                      itemBuilder: ((context, index) {
+                        return Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 10.0),
+                          child: Data().dataInOrder[index],
+                        );
+                      }),
+                    );
+                  },
+                ),
+                const SizedBox(height: 100.0), //Temporary
+                Text(
+                  'Mr. Eaves Small Caps: Section Header',
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
+                Text(
+                  'Mr. Eaves Small Caps: Sub Header',
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                Text(
+                  'Mr. Eaves Small Caps: Block Header',
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+                Text(
+                  'Zatanna Misdirection: Monster Manual Note',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                Text(
+                  'Scaly Sans Bold: Table Header',
+                  style: Theme.of(context).textTheme.labelLarge,
+                ),
+                Text('Scaly Sans Bold: Column Header',
+                    style: Theme.of(context).textTheme.labelMedium),
+                Text('Scaly Sans: Table Body',
+                    style: Theme.of(context).textTheme.labelSmall),
+              ],
+            ),
           ),
-
-          Text(
-            'Mr. Eaves Small Caps: Section Header',
-            style: Theme.of(context).textTheme.displayLarge,
-          ),
-          Text(
-            'Mr. Eaves Small Caps: Sub Header',
-            style: Theme.of(context).textTheme.displayMedium,
-          ),
-          Text(
-            'Mr. Eaves Small Caps: Block Header',
-            style: Theme.of(context).textTheme.displaySmall,
-          ),
-          Text(
-            'Zatanna Misdirection: Monster Manual Note',
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-          Text(
-            'Scaly Sans Bold: Table Header',
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
-          Text('Scaly Sans Bold: Column Header',
-              style: Theme.of(context).textTheme.labelMedium),
-          Text('Scaly Sans: Table Body',
-              style: Theme.of(context).textTheme.labelSmall),
-          // OutlinedButton(
-          //   onPressed: () {},
-          //   child: const Text('Add a Title'),
-          // ),
-        ],
+        ),
       ),
     );
   }

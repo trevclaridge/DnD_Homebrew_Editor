@@ -10,3 +10,4 @@ part 'screens.dart/page_editor.dart';
 part 'widgets/paragraph_field.dart';
 part 'widgets/page.dart';
 part 'widgets/page_block.dart';
+part 'widgets/editor_column.dart';

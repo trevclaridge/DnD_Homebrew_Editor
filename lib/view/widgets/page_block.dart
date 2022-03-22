@@ -14,9 +14,13 @@ class PageBlock extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       style: blockStyle,
-      decoration: const InputDecoration(border: InputBorder.none),
+      decoration: const InputDecoration(
+          border: InputBorder.none,
+          contentPadding: EdgeInsets.symmetric(vertical: 5.0),
+          isCollapsed: true),
       maxLines: null,
       controller: TextEditingController(text: content),
+      autofocus: true,
     );
   }
 }
