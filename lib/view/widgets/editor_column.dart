@@ -1,5 +1,6 @@
 part of view;
 
+// ignore: must_be_immutable
 class EditorColumn extends StatelessWidget with ChangeNotifier {
   EditorColumn({
     Key? key,
@@ -21,12 +22,23 @@ class EditorColumn extends StatelessWidget with ChangeNotifier {
           ),
           const Divider(thickness: 2.0),
           OutlinedButton(
-            onPressed: () =>
-                Provider.of<Data>(context, listen: false).addBlock(),
-            child: const Text('Add Heading'),
+            onPressed: () => Provider.of<Data>(context, listen: false)
+                .addBlock(CustomTheme.defaultTheme.textTheme.displayLarge!),
+            child: const Text('Add Section Header'),
           ),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () => Provider.of<Data>(context, listen: false)
+                .addBlock(CustomTheme.defaultTheme.textTheme.displayMedium!),
+            child: const Text('Add Sub Header'),
+          ),
+          OutlinedButton(
+            onPressed: () => Provider.of<Data>(context, listen: false)
+                .addBlock(CustomTheme.defaultTheme.textTheme.displaySmall!),
+            child: const Text('Add Block Header'),
+          ),
+          OutlinedButton(
+            onPressed: () => Provider.of<Data>(context, listen: false)
+                .addBlock(CustomTheme.defaultTheme.textTheme.bodySmall!),
             child: const Text('Add a Paragraph'),
           ),
           OutlinedButton(

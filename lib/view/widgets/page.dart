@@ -14,48 +14,67 @@ class Page extends StatelessWidget {
           aspectRatio: 1 / 1.4142,
           child: Container(
             color: Palette.pageColor,
-            child: ListView(
-              children: [
-                Consumer<Data>(
-                  builder: (context, value, child) {
-                    return ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: Data().dataInOrder.length,
-                      itemBuilder: ((context, index) {
-                        return Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Data().dataInOrder[index],
-                        );
-                      }),
-                    );
-                  },
-                ),
-                const SizedBox(height: 100.0), //Temporary
-                Text(
-                  'Mr. Eaves Small Caps: Section Header',
-                  style: Theme.of(context).textTheme.displayLarge,
-                ),
-                Text(
-                  'Mr. Eaves Small Caps: Sub Header',
-                  style: Theme.of(context).textTheme.displayMedium,
-                ),
-                Text(
-                  'Mr. Eaves Small Caps: Block Header',
-                  style: Theme.of(context).textTheme.displaySmall,
-                ),
-                Text(
-                  'Zatanna Misdirection: Monster Manual Note',
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-                Text(
-                  'Scaly Sans Bold: Table Header',
-                  style: Theme.of(context).textTheme.labelLarge,
-                ),
-                Text('Scaly Sans Bold: Column Header',
-                    style: Theme.of(context).textTheme.labelMedium),
-                Text('Scaly Sans: Table Body',
-                    style: Theme.of(context).textTheme.labelSmall),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 30.0),
+              child: Row(
+                children: [
+                  const SizedBox(width: 30.0),
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        Consumer<Data>(
+                          builder: (context, value, child) {
+                            return ListView.builder(
+                              shrinkWrap: true,
+                              itemCount: Data().dataInOrder.length,
+                              itemBuilder: ((context, index) {
+                                return Container(
+                                  margin: const EdgeInsets.symmetric(
+                                      horizontal: 10.0),
+                                  child: Data().dataInOrder[index],
+                                );
+                              }),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 15.0),
+                  Expanded(
+                    child: ListView(
+                      children: [
+                        const SizedBox(height: 100.0), //Temporary
+                        Text(
+                          'Mr. Eaves Small Caps: Section Header',
+                          style: Theme.of(context).textTheme.displayLarge,
+                        ),
+                        Text(
+                          'Mr. Eaves Small Caps: Sub Header',
+                          style: Theme.of(context).textTheme.displayMedium,
+                        ),
+                        Text(
+                          'Mr. Eaves Small Caps: Block Header',
+                          style: Theme.of(context).textTheme.displaySmall,
+                        ),
+                        Text(
+                          'Zatanna Misdirection: Monster Manual Note',
+                          style: Theme.of(context).textTheme.bodyMedium,
+                        ),
+                        Text(
+                          'Scaly Sans Bold: Table Header',
+                          style: Theme.of(context).textTheme.labelLarge,
+                        ),
+                        Text('Scaly Sans Bold: Column Header',
+                            style: Theme.of(context).textTheme.labelMedium),
+                        Text('Scaly Sans: Table Body',
+                            style: Theme.of(context).textTheme.labelSmall),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(width: 30.0),
+                ],
+              ),
             ),
           ),
         ),

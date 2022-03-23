@@ -19,7 +19,7 @@ class _PageEditorState extends State<PageEditor> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Page(),
-          VerticalDivider(thickness: 2.0),
+          const VerticalDivider(thickness: 2.0),
           EditorColumn(),
         ],
       ),
