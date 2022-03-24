@@ -57,6 +57,9 @@ class EditorColumn extends StatelessWidget with ChangeNotifier {
             onPressed: () {},
             child: const Text('Edit Image'),
           ),
+          OutlinedButton(
+              onPressed: () => Navigator.pushNamed(context, 'quill'),
+              child: const Text('Go To Quill Editor'))
         ],
       ),
     );

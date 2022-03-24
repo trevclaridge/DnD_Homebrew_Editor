@@ -25,7 +25,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Homebrew Editor',
       theme: CustomTheme.defaultTheme,
-      home: const PageEditor(),
+      initialRoute: 'editor',
+      routes: <String, WidgetBuilder>{
+        'editor': (context) => const PageEditor(),
+        'quill': (context) => const QuillEditorPage(),
+      },
     );
   }
 }
