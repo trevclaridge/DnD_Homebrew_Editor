@@ -1,7 +1,8 @@
 part of view;
 
 class Palette {
-  static const Color background = Color(0xFFF2ECE4);
+  static const Color background = Color(0xFFF9F9F9);
+  static const Color pageColor = Color(0xFFF2ECE4);
   static const Color sectionHeader = Color(0xFF58180D);
   static const Color logo = Color(0xFFED1C24);
   static const Color statblock = Color(0xFF9C2B1B);

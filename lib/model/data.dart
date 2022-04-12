@@ -23,7 +23,6 @@ class Data with ChangeNotifier {
     'Longer Paragraph:  The internal stability and general happiness of a kingdom\'s citizens. Unlike the other Kingdom Resources, a kingdom often won\'t directly affect the points of their Law resource. Instead, Law is reactive to how the citizens perceive critical events around the kingdoms. If an event is likely to cause distress to the average civilian, the Law resource would be depleted; likewise, periods of peace and prosperity are likely to encourage social cohesion, increasing the Law resource. The number of the Law resource directly affects the number of Minor Actions a kingdom has access to per turn. Kingdoms can look to the Law Modifier chart to see how their Law resource number affects their number of Minor Actions every turn.'
   ];
 
-  var theme = CustomTheme();
   final List<Widget> dataInOrder = <Widget>[
     PageBlock(
         blockStyle: CustomTheme.defaultTheme.textTheme.displayLarge!,
@@ -49,4 +48,9 @@ class Data with ChangeNotifier {
         content:
             'Longer Paragraph:  The internal stability and general happiness of a kingdom\'s citizens. Unlike the other Kingdom Resources, a kingdom often won\'t directly affect the points of their Law resource. Instead, Law is reactive to how the citizens perceive critical events around the kingdoms. If an event is likely to cause distress to the average civilian, the Law resource would be depleted; likewise, periods of peace and prosperity are likely to encourage social cohesion, increasing the Law resource. The number of the Law resource directly affects the number of Minor Actions a kingdom has access to per turn. Kingdoms can look to the Law Modifier chart to see how their Law resource number affects their number of Minor Actions every turn.'),
   ];
+
+  void addBlock(TextStyle blockStyle) {
+    dataInOrder.add(PageBlock(blockStyle: blockStyle, content: ''));
+    notifyListeners();
+  }
 }
